@@ -1,0 +1,61 @@
+.btn-icon{
+    width: 2rem;
+    height: 2rem;
+    filter: invert(100%);
+    margin-right: 28px;
+}
+.on-page, .off-page{
+    border: none;
+    width: 100%;
+    padding-block: 15px;
+    display: block;
+    font-size: 2.4rem;
+    color: white;
+    text-align: left;
+    padding-left: 50px;
+    position: relative;
+}
+
+.on-page::before, .off-page::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.on-page{
+    background: rgba(255, 255, 255, .1);
+}
+
+.on-page::before{
+    left: 0;
+    width: 100%;
+    border-left: solid white 10px;
+    border-right: solid white 3px;
+}
+
+.off-page{
+    background: rgba(255, 255, 255, 0);
+
+}
+
+.off-page::before{
+    left: -13px;
+}
+
+.off-page:hover::before{
+    animation: btn-hover 300ms ease-in-out forwards;
+}
+
+@keyframes btn-hover{
+    from{
+        width: 0;
+    }
+    to{
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, .1);
+        border-left: solid white 10px;
+        border-right: solid white 3px;
+    }
+}
