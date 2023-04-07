@@ -1,18 +1,28 @@
+import React, { useState } from 'react';
+import logo from '../../Assests/library.svg'
 import './HeadBar.css'
 
 const HeadBar = (props) => {
 
-    function getIcon(){
-        let iconLocation = require('../../Assests/find.svg')
-        return(<img src={iconLocation} alt='search icon' className='search-icon'/>)
+    const [firstApearance, setFirstApearance] = useState(true);
+
+    function animation(){
+        if(props.currentPage === 'Search'){
+            if(firstApearance){setFirstApearance(false)}
+            return 'search-page'
+        }
+        else if(!firstApearance){
+            return 'non-search-page'
+        }
+        else{return 'load'}
     }
 
     return (
-        <header>
-            <h1>MUSIC LIBRARY</h1>
+        <header className={animation()}>
+            <h1>MUSIC <img src={logo} alt='Music Library Logo' className='logo'/> <span>Library</span></h1>
             <div className='search-bar'>
-                <input type='text' name='search' placeholder='search...'/>
-                <button>{getIcon()}</button>
+                <input type='text' name='search'/>
+                <button onClick={()=>props.setCurrentPage('Search')}>Search</button>
             </div>
         </header>
     );

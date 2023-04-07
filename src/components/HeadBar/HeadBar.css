@@ -1,18 +1,124 @@
-header{
+.load, .search-page, .non-search-page{
     position: relative;
     z-index: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    display: flex;
     margin-left: 450px;
     margin-right: 100px;
     height: 81px;
-    border-bottom: solid 2px rgba(255, 255, 255, 0.5) ;
+    border-bottom: solid 2px rgba(255, 255, 255, 0.5);
 }
 
 h1{
-    margin-left: 50px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    left: 50px;
     font-size: 4rem;
     color: white;
+}
+
+h1 span{
+    font-size: 4rem;
+    font-weight: normal;
+}
+
+h1 .logo{
+    width: 50px;
+    height: 50px;
+    filter: invert(100%);
+    margin-left: 1rem;
+    margin-right: 3px;
+}
+
+.search-bar{
+    position: absolute;
+    right: 50px;
+}
+
+.search-bar input,button{
+    margin: 0;
+    border: none;
+    font-size: 1.8rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-inline: 1.5rem;
+    padding-bottom: .3rem;
+    padding-top: .4rem;
+    color: white;
+}
+
+.search-bar input{
+    border-radius: 2rem;
+    box-shadow: inset 2px 2px 2px black;
+    margin-right: 1rem;
+}
+
+.search-bar input:focus{
+    outline: none;
+}
+
+.search-bar button{
+    border-radius: 2rem;
+}
+
+.search-bar button:hover{
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.50);
+}
+
+.search-page h1{
+    position: absolute;
+    margin: 0;
+    left: 50px;
+    animation: move ease-in-out forwards 1s;
+}
+
+@keyframes move{
+    100%{
+        left: 40%;
+    }
+}
+
+.search-page .search-bar{
+    position: absolute;
+    right: 0;
+    animation: gone ease-in-out forwards .75s;
+}
+
+@keyframes gone{
+    100%{
+        transform: translateX(50px);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.non-search-page h1{
+    position: absolute;
+    left: 40%;
+    margin: 0;
+    animation: move-back ease-in-out forwards .75s;
+}
+
+@keyframes move-back{
+    100%{
+        left: 50px;
+    }
+}
+
+.non-search-page .search-bar{
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    right: 0;
+    visibility: hidden;
+    animation: return ease-in-out forwards .75s;
+}
+
+@keyframes return{
+    100%{
+        visibility: visible;
+        opacity: 1;
+        right: 50px;
+    }
 }

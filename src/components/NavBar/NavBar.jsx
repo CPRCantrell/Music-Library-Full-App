@@ -1,4 +1,5 @@
 import NavButton from './NavButton/NavButton'
+import newSongIcon from '../../Assests/new-song.svg'
 import './NavBar.css'
 
 const NavBar = (props) => {
@@ -21,7 +22,7 @@ const NavBar = (props) => {
                 <NavButton currentPage={props.currentPage} setCurrentPage={props.setCurrentPage} buttonName={'Playlists'}/>
             </div>
             <div className='add-song'>
-                <NavButton currentPage={props.currentPage} setCurrentPage={props.setCurrentPage} buttonName={'New Song'}/>
+                <button className='new-song'>New Song</button>
             </div>
         </nav>
     );
