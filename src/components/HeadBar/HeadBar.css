@@ -1,0 +1,18 @@
+header{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    margin-left: 450px;
+    margin-right: 100px;
+    height: 81px;
+    border-bottom: solid 2px rgba(255, 255, 255, 0.5) ;
+}
+
+h1{
+    margin-left: 50px;
+    font-size: 4rem;
+    color: white;
+}
