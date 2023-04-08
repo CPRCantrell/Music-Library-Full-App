@@ -1,0 +1,144 @@
+form{
+    position: fixed;
+    z-index: 3;
+    left: 375px;
+    bottom: 15%;
+    display: grid;
+    width: 400px;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    border-radius: 5px 5px 5px 0;
+    color: white;
+}
+
+form h2{
+    font-size: 2.8rem;
+    justify-self: center;
+}
+
+.group, .name{
+}
+
+.group label{
+    font-size: 2.4rem;
+}
+
+.group input, .name input{
+    width: 100%;
+    padding: .5rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.6rem;
+}
+
+.group input:focus{
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.center-box{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.song-info{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto, auto;
+    gap: 10px;
+    column-gap: 20px;
+}
+
+.song-grid-A{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.song-grid-B{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.song-grid-C{
+    grid-column: 1 / span 2;
+    grid-row: 2;
+}
+
+.album-info{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(2,auto);
+    gap: 10px;
+    column-gap: 20px;
+}
+
+.solo{
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+.name{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+}
+
+.album-data{
+    display: flex;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btns button{
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.btns button:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: solid 1px white;
+}
+
+.artist-selection-box,
+.last-name-selection-box,
+.album-selection-box,
+.genre-selection-box{
+    display: grid;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    left:5px;
+    top:105%;
+    box-shadow: 4px px 2px black;
+}
+
+.artist-selection-option,
+.last-name-selection-option,
+.album-selection-option,
+.genre-selection-option{
+    color: black;
+    font-size: 1.4rem;
+}
+
+.artist-selection-option:hover,
+.last-name-selection-option:hover,
+.album-selection-option:hover,
+.genre-selection-option:hover{
+    background-color: rgba(255, 255, 255, 0.6);
+}

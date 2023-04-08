@@ -1,9 +1,14 @@
+import React from 'react';
 import NavButton from './NavButton/NavButton'
 import newSongIcon from '../../Assests/new-song.svg'
 import './NavBar.css'
 
 const NavBar = (props) => {
     const profilePicture = require('../../Assests/self.jpg')
+
+    function handleNewSongClick(){
+        props.addSongModal ? props.setAddSongModal(false):props.setAddSongModal(true)
+    }
 
     return (
         <nav>
@@ -21,9 +26,7 @@ const NavBar = (props) => {
                 <NavButton currentPage={props.currentPage} setCurrentPage={props.setCurrentPage} buttonName={'Favorites'}/>
                 <NavButton currentPage={props.currentPage} setCurrentPage={props.setCurrentPage} buttonName={'Playlists'}/>
             </div>
-            <div className='add-song'>
-                <button className='new-song'>New Song</button>
-            </div>
+            <button className='new-song' onClick={()=>handleNewSongClick()}><img src={newSongIcon} alt='new song icon' className='btn-icon'/>New Song</button>
         </nav>
     );
 }

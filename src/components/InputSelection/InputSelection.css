@@ -1,0 +1,31 @@
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.input-selector-input{
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.6rem;
+}
+
+.input-selector-input:focus{
+    outline: none;
+}
+
+.input-selector-box{
+    z-index: 5;
+    top: 100%;
+    background-color: white;
+    display: grid;
+}
+
+.input-selector-options{
+    background-color: white;
+    font-size: 1.6rem;
+    color: black;
+}

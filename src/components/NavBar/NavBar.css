@@ -40,10 +40,26 @@ p{
     margin-bottom: 10px;
 }
 
-.add-song{
+.new-song{
     position: absolute;
-    width: 100%;
-    padding-top: 20px;
-    bottom: 40px;
+    bottom: 0;
+    border: none;
     border-top: solid rgba(255, 255, 255, 0.1) 1px;
+    width: 100%;
+    font-size: 2.4rem;
+    color: white;
+    text-align: left;
+    padding-left: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    height: 15%;
+}
+
+.new-song:hover{
+    border: none;
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.new-song:active{
+    background: rgba(0,0,0,.1);
 }
