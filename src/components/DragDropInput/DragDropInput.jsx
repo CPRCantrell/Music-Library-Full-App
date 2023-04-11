@@ -37,7 +37,7 @@ const DragDropInput = (props) => {
             </div>
         )
         }
-            <input type='file' name='album-art' accept='image/*' required/>
+            <input formEncType='multioart/form-data' type='file' name='album_art' accept='image/*' required/>
         </div>
     );
 }

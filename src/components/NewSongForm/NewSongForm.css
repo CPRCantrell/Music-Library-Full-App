@@ -1,8 +1,12 @@
-form{
+.form{
     position: fixed;
     z-index: 3;
     left: 375px;
     bottom: 15%;
+    backdrop-filter: blur(10px);
+}
+
+form{
     display: grid;
     width: 400px;
     gap: 10px;
@@ -17,7 +21,8 @@ form h2{
     justify-self: center;
 }
 
-.group, .name{
+.group{
+    position: relative;
 }
 
 .group label{
@@ -31,7 +36,6 @@ form h2{
     border: none;
     font-size: 1.6rem;
 }
-
 .group input:focus{
     outline: none;
 }
@@ -56,7 +60,7 @@ input[type=number] {
 .song-info{
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto, auto;
+    grid-template-rows: auto, auto, auto;
     gap: 10px;
     column-gap: 20px;
 }
@@ -76,6 +80,20 @@ input[type=number] {
     grid-row: 2;
 }
 
+.song-grid-D{
+    grid-column: 1 / span 2;
+    grid-row: 3;
+}
+
+.optional{
+    display: flex;
+    justify-content: space-between;
+}
+
+.exist-check{
+    display: flex;
+}
+
 .album-info{
     display: grid;
     grid-template-columns: repeat(2,auto);
@@ -84,19 +102,44 @@ input[type=number] {
     column-gap: 20px;
 }
 
-.solo{
-    grid-column: 1 / span 2;
-    grid-row: 1;
+.info-box{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: solid 1px white;
+    border-radius: 10px;
+    height: 230px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 50%, 50%;
+    align-content: center;
+    padding-inline: 15px;
+    overflow: auto;
+}
+
+.info-box input, .no-interact{
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.info-box img{
+    height: 200px;
+    width: 200px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.info-box span label{
+    font-size: 2.4rem;
+    border-bottom: solid 1px white;
 }
 
 .name{
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 20px;
-}
-
-.album-data{
-    display: flex;
 }
 
 .btns{
@@ -106,9 +149,13 @@ input[type=number] {
 }
 
 .btns button{
+    border: 0;
     width: 150px;
     height: 40px;
     border-radius: 5px;
+    font-size: 1.8rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
 .btns button:hover{
@@ -121,11 +168,12 @@ input[type=number] {
 .album-selection-box,
 .genre-selection-box{
     display: grid;
+    z-index: 5;
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(4px);
     left:5px;
     top:105%;
-    box-shadow: 4px px 2px black;
+    box-shadow: 4px 4px 2px black;
 }
 
 .artist-selection-option,

@@ -1,0 +1,58 @@
+.modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-body{
+    width: 90%;
+    padding-block: 10%;
+    border-radius: 5px;
+}
+
+.success{
+    background-color: rgb(113, 185, 113);
+}
+
+.error{
+    background-color: rgb(182, 101, 101);
+}
+
+.modal-body p{
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding-block: 15px;
+}
+
+.modal-body .error-code{
+    padding-bottom: 0;
+}
+
+.modal-btns{
+    display: flex;
+    gap:10px;
+    justify-content: center;
+    background-color: white;
+}
+
+.modal-btns button{
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 90px;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    padding: .2rem;
+}
+
+.modal-btns button:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+}

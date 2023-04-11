@@ -1,0 +1,181 @@
+.search-page-display{
+    position: relative;
+    z-index: 2;
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    color: white;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 60px auto;
+}
+
+.filter-area{
+    border-right: solid 1px black;
+    background-color: rgba(0, 0, 0, 0.25);
+    grid-column: 1;
+    grid-row: 1/span 2;
+    padding: 60px 40px;
+}
+
+.filter-header{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: solid 1px white;
+    border-top: solid 1px white;
+}
+
+.filter-header span{
+    font-size: 2.4rem;
+}
+
+.filter-options, .filter-options input, .filter-options label{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.filter-options input[type='text']{
+    width: 100%;
+    border-radius: 5px;
+    padding: .2rem 1rem;
+}
+
+.clear{
+    font-size: 2rem;
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    border-radius: 2rem;
+    padding-block: .3rem;
+}
+
+.check-label label{
+    margin-left: 10px;
+}
+
+.search-area{
+    background-color: rgba(0, 0, 0, 0.25);
+    padding:1.5rem 3rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    border-bottom: solid 1px black;
+}
+
+.search-area input{
+    font-size: 2rem;
+    width: 30%;
+    border-radius: 3rem;
+    padding: .2rem 2rem;
+}
+
+.search-area input:focus{
+    outline: none;
+}
+
+.search-area button{
+    font-size: 2rem;
+    border-radius: 2rem;
+    padding: .2rem 2rem;
+}
+
+.search-results{
+    padding-left: 20px;
+}
+
+.search-results h2{
+    font-size: 4rem;
+    width: 50%;
+}
+
+.search-results p{
+    font-size: 1.6rem;
+}
+
+.songs{
+    border-left: solid 1px white;
+    border-top: solid 1px white;
+}
+
+.making-space{
+    padding-left: 10px;
+    padding-top: 10px;
+    display: grid;
+    gap: 5px;
+}
+
+.song{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px;
+}
+
+.name-album{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.song img{
+    width: 50px;
+}
+
+.albums{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    border-left: solid 1px white;
+    border-top: solid 1px white;
+}
+
+.album{
+    display: flex;
+    padding: 10px;
+    gap: 5px;
+}
+
+.album img{
+    width: 175px;
+}
+
+.album-info{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.album-name span{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.artists{
+    border-left: solid 1px white;
+    border-top: solid 1px white;
+    padding: 10px 0 0 10px;
+}
+
+.artist-name{
+    padding-bottom: 5px;
+}
+
+.artist-name span{
+    font-size: 2rem;
+    padding-bottom: 5px;
+}
+
+.albums-artist{
+    background-color: rgba(0, 0, 0, 0.25);
+    border: solid 1px white;
+    display: flex;
+    align-items: center;
+}
+
+.albums-artist img{
+    width: 100px;
+    padding: 5px;
+}

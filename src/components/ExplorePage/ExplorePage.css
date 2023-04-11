@@ -1,0 +1,78 @@
+section{
+    position: relative;
+    width: 100%;
+}
+
+.full-song-list{
+    max-width: 60vw;
+    margin-inline: auto;
+    margin-block: 100px;
+}
+
+.full-song-list h2{
+    font-size: 4rem;
+    margin-left: 2rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    width: 40%;
+    border-left: solid 1px white;
+    border-bottom: solid 1px white;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.filters{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    gap: 30px;
+}
+
+.filter-group{
+    display: grid;
+    width: 200px;
+}
+
+.filter-group label, .filter-group select, .filter-group .opions option, .filter-group .options option{
+    font-size: 2rem;
+}
+
+.filter-group .opions{
+    border: none;
+    border-radius: 5px;
+}
+
+.filter-group .opions:focus{
+    outline: none;
+}
+
+.filter-group label{
+    color: white;
+}
+
+.song-list{
+    display: grid;
+    gap: 5px;
+}
+
+.song-list .song{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.item{
+    display: grid;
+    grid-template-columns: 50% 45% 5%;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px;
+}
+
+.item img{
+    width: 50px;
+}
