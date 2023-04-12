@@ -84,6 +84,13 @@ artists_schema = ArtistSchema(many=True)
 
 # Resources
 # Routes
+@app.route('/api/song/delete/<int:song_id>', methods=['DELETE'])
+def delete_song(song_id):
+    song = Song.query.get_or_404(song_id)
+    db.session.delete(song)
+    db.session.commit()
+    return f'{song.title} was deleted', 200
+
 @app.route('/api/songs/all', methods=['GET'])
 def send_all_data():
     all_songs = Song.query.all()
@@ -107,6 +114,7 @@ def songs_with_detail():
         album = Album.query.get_or_404(song.album)
         artist = Artist.query.get_or_404(album.artist_id)
         response.append({
+            'id': song.id,
             'title': song.title,
             'run_time': song.run_time,
             'album': albums_with_song_schema.dump(album),

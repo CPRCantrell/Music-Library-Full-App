@@ -39,7 +39,7 @@ section{
 }
 
 .filter-group label, .filter-group select, .filter-group .opions option, .filter-group .options option{
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .filter-group .opions{
@@ -66,13 +66,58 @@ section{
 
 .item{
     display: grid;
-    grid-template-columns: 50% 45% 5%;
+    grid-template-columns: 45% 45% 6% 4%;
     align-items: center;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.2);
     padding: 5px;
 }
 
+.item p{
+    font-size: 1.8rem;
+}
+
 .item img{
     width: 50px;
+}
+
+.detail-options{
+    font-size: 1.8rem;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding-bottom: 10px;
+}
+
+.detail-options:hover{
+    font-weight: bold;
+}
+
+.song-setting{
+    position: relative;
+}
+
+.setting-modal{
+    position: absolute;
+    bottom: 50%;
+    left: 105%;
+    width: 100px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.setting-option{
+    font-size: 1.4rem;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: .3rem
+}
+
+.show{visibility: visible;}
+.hide{visibility: hidden;}
+
+.setting-option:hover{
+    background-color: rgba(0, 0, 0, 0.2);
 }

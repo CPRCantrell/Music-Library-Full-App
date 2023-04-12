@@ -15,7 +15,7 @@ function App() {
   const [songs, setSongs] = useState([]);
   const [albums, setAlbums] = useState([]);
   const [artists, setArtists] = useState([]);
-  const [genres, setGenres] = useState([])
+  const [genres, setGenres] = useState([]);
 
 
   useEffect(() => {

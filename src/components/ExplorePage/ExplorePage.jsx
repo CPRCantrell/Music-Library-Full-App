@@ -8,6 +8,7 @@ const ExplorePage = (props) => {
     const [genreFilter, setGenreFilter] = useState('');
     const [artistFilter, setArtistFilter] = useState('');
     const [songsToFilter, setSongsToFilter] = useState([]);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         getSongWithMoreInfo()
@@ -45,10 +46,23 @@ const ExplorePage = (props) => {
                         </div>
                         <p>{song.artist}</p>
                         <p>{String((song.run_time/60).toFixed(2)).replace('.',':')}</p>
+                        <div className='song-setting'>
+                            <button className='detail-options' onClick={()=>setShowModal(showModal === index ? -1:index)}>...</button>
+                            <div className={`setting-modal ${showModal === index ? 'show':'hide'}`} onMouseLeave={() => setShowModal(-1)}>
+                                <button className={'setting-option delete'} onClick={()=>handleDelete(song.id)}>Delete Song</button>
+                                <button className={'setting-option edit'}>Edit Song</button>
+                            </div>
+                        </div>
                     </div>
                 )
             })
         )
+    }
+
+    async function handleDelete(song_id){
+        let response = await axios.delete('http://127.0.0.1:5000/api/song/delete/'+song_id)
+        alert(response.data)
+        window.location.reload(true)
     }
 
     return (
