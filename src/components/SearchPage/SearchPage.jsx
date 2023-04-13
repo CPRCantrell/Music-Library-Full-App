@@ -50,21 +50,23 @@ const SearchPage = (props) => {
                 return false
             })
         }
-        if(yearFilter.max === 4 || yearFilter.min === 4){
-            let min = yearFilter.min
-            let max = yearFilter.max
-            filteredAlbums = filteredAlbums.filter((albums)=>min<albums.year<max)
+        if(yearFilter.max !== '' || yearFilter.min !== ''){
+            let min = parseInt(yearFilter.min === '' ? 0 : yearFilter.min)
+            let max = parseInt(yearFilter.max === '' ? 9999 : yearFilter.max)
+            filteredAlbums = filteredAlbums.filter((album)=>{
+                return(min<album.release_date && album.release_date<max)
+            })
             filteredSongs = filteredSongs.filter((song) => {
-                for(let album in props.albums){
-                    if(props.albums[album].id === song.albums){
+                for(let album in filteredAlbums){
+                    if(filteredAlbums[album].id === song.album){
                         return true
                     }
                 }
                 return false
             })
             filteredArtists = filteredArtists.filter((artist) => {
-                for(let album in props.albums){
-                    if(props.albums[album].artist_id === artist.id){
+                for(let album in filteredAlbums){
+                    if(filteredAlbums[album].artist_id === artist.id){
                         return true
                     }
                 }

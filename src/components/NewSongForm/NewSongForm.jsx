@@ -111,11 +111,11 @@ const NewSongForm = (props) => {
                 <div className='song-info'>
                     <div className='group song-grid-A'>
                         <label>Title</label>
-                        <input autoComplete='off' type='text' name='song_name' placeholder='Song Name' value={title} onChange={(e)=>verifyTitle(e.target.value)} required/>
+                        <input data-cy='title' autoComplete='off' type='text' name='song_name' placeholder='Song Name' value={title} onChange={(e)=>verifyTitle(e.target.value)} required/>
                     </div>
                     <div className='group song-grid-B'>
                         <label>Run time</label>
-                        <input autoComplete='off' type='text' name='run_time' placeholder='m:ss (2:13)' pattern={/^[1-9]?[0-9]\:\d{1,2}/} value={runTime} onChange={(e)=>verifyRunTime(e.target.value)} required/>
+                        <input data-cy='run_time' autoComplete='off' type='text' name='run_time' placeholder='m:ss (2:13)' pattern={/^[1-9]?[0-9]\:\d{1,2}/} value={runTime} onChange={(e)=>verifyRunTime(e.target.value)} required/>
                     </div>
                     <div className='group song-grid-C'>
                         <div className='optional'>
@@ -141,7 +141,7 @@ const NewSongForm = (props) => {
                 </div>
                 {renderAlbumInfo()}
                 <div className='group btns'>
-                    <button type='submit' name='submitBtn'>Submit</button>
+                    <button data-cy='submit-btn' type='submit' name='submitBtn'>Submit</button>
                     <button type='' onClick={()=>props.setAddSongModal(false)}>Cancel</button>
                 </div>
             </form>

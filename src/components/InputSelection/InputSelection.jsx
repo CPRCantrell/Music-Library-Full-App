@@ -54,11 +54,15 @@ const InputSelection = (props) => {
         }else{
             setmatches([])
         }
+        if(exist && value !== ''){
+            let match = matches.filter(item => item.name.toLowerCase() === value.toLowerCase())[0]
+            if(match){existingData(match)}
+        }
     }
 
     return (
         <div className={name+'-selection relative'}>
-            <input className={name+'-selection-input'} onInput={(e)=>findMatches(e.target.value)} id={name+'s'} name={name} value={data} onChange={(e)=>props.task(e.target.value)} autoComplete='off' placeholder={placeholder} required/>
+            <input data-cy={name} className={name+'-selection-input'} onInput={(e)=>findMatches(e.target.value)} id={name+'s'} name={name} value={data} onChange={(e)=>props.task(e.target.value)} autoComplete='off' placeholder={placeholder} required/>
             {matches.length > 0 ? (
                 <div className={name+'-selection-box absolute'}>
                     {matches.map((match,index)=>{
