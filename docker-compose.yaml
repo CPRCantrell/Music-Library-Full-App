@@ -1,0 +1,36 @@
+version: '3.1'
+services:
+  music-library-app-database:
+    build: ./database
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    restart: always
+    container_name: music-library-database
+    image: blazebellet/music-library-database:2
+    volumes:
+      - db-date:/var/lib/mysql
+
+  music-library-app-backend:
+    build: ./backend
+    ports:
+      - 5000:5000
+    restart: always
+    container_name: music-library-backend
+    image: blazebellet/music-library-backend:2
+    depends_on:
+      - "music-library-app-database"
+    command: >
+      sh -c "flask db upgrade && flask run --host=0.0.0.0"
+
+  music-library-app-frontend:
+    build: ./frontend
+    ports:
+      - 3000:3000
+    restart: always
+    container_name: music-library-frontend
+    image: blazebellet/music-library-frontend:2
+
+volumes:
+  db-date:

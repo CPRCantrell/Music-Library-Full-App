@@ -37,17 +37,15 @@ function App() {
 
   return (
     <div className='App'>
-      {genres.length ? (
-      <>
-        <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} addSongModal={addSongModal} setAddSongModal={setAddSongModal}/>
-        <HeadBar currentPage={currentPage} setCurrentPage={setCurrentPage} setInitialSearch={setInitialSearch} initialSearch={initialSearch}/>
-        {addSongModal ?  <NewSongForm setAddSongModal={setAddSongModal} albums={albums} artists={artists} genres={genres}/>:null}
+      <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} addSongModal={addSongModal} setAddSongModal={setAddSongModal}/>
+      <HeadBar currentPage={currentPage} setCurrentPage={setCurrentPage} setInitialSearch={setInitialSearch} initialSearch={initialSearch}/>
+      {addSongModal ?  <NewSongForm setAddSongModal={setAddSongModal} albums={albums} artists={artists} genres={genres}/>:null}
+      {genres.length>0 ?
         <main>
           {currentPage === 'Explore' ? <ExplorePage songs={songs} genres={genres} artists={artists}/>:null}
           {currentPage === 'Search' ? <SearchPage setInitialSearch={setInitialSearch} initialSearch={initialSearch} songs={songs} albums={albums} artists={artists} genres={genres}/>: null}
         </main>
-      </>
-      ):null}
+      :null}
     </div>
   );
 }
